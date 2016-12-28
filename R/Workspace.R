@@ -93,7 +93,7 @@ Workspace = R6Class('Workspace',
                 },
                 setGitUser = function(Xname = NULL, Xemail = NULL){
                   # if(!is.null(Xname)) self$runCommand(paste0('git config --global user.name "', gsub(" ", "", Xname, fixed = T), '" --replace-all'))
-                  if(!is.null(Xname)) self$runCommand(paste0('git config --global user.name "', gsub(" ", "", Xname, fixed = T), '"'))
+                  if(!is.null(Xname)) self$runCommand(paste0('git config --global user.name "', Xname, '"'))
                   if(!is.null(Xemail)) self$runCommand(paste0('git config --global user.email "', gsub(" ", "", Xemail, fixed = T), '"'))
                   message(system('powershell -command git config --list'))
                 },

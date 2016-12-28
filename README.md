@@ -83,21 +83,20 @@ w$libraryCreate(Xlibrary = lib, Xname = 'Your Name and Surname', Xemail = 'your 
 w$libraryUpdate(Xlibrary = lib, Xmessage = 'commit message', Xuser = 'git user', Xpassword = 'git password', Xrepository = 'repository name', Xbranch = 'master', Xhost = 'git host')
 
 # Example creating a new branch, checkout & push 
-w$libraryUpdate(Xlibrary = lib, Xmessage = 'version 0.0.0.9002', Xuser = 'JoanViana', Xpassword = 'my_password', Xrepository = 'devR', Xbranch = 'new_branch', Xhost = 'bitbucket.org')
+w$libraryUpdate(Xlibrary = lib, Xmessage = 'version 0.0.0.9002', Xuser = 'JoanViana', Xpassword = 'my_password', Xrepository = 'devR', Xbranch = 'new_branch', Xhost = 'github.com')
 
 ```
 
 ## Issues
 
-1. DESCRIPTION (Depends line) edition in *Workspace$libraryCreate()*
-    * Task 1: Debug and test.
-2. Choose if add or edit in *git config --global user.name*
+1. DESCRIPTION (Depends line) edition in `Workspace$libraryCreate()`. Debug and test.
+2. Choose if add or edit in `git config --global user.name "..."`
 
 ## Next Tasks (Features & Documentation)
 
-1. Add an example with *devtools::install_github()*. Take into account public and private repositories.
-2. New workflow for contributing
-3. Roxygen2 Documentation of R/Workspace.R and compile it by libraryUpdate() && modify paths of README.md.
+1. Add an example with `devtools::install_github()`. Take into account public and private repositories.
+2. New workflow for *contributing*
+3. Roxygen2 Documentation of */R/Workspace.R* and compile it by `Workspace$libraryUpdate()` && modify paths of *README.md*.
 4. Rpubs, pdf = vignettes, git webpage (index.html), ... of script I want. 
 
 ## Contributing
