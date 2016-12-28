@@ -94,10 +94,11 @@ w$libraryUpdate(Xlibrary = lib, Xmessage = 'version 0.0.0.9002', Xuser = 'JoanVi
 
 ## Next Tasks (Features & Documentation)
 
-1. Add an example with `devtools::install_github()`. Take into account public and private repositories.
-2. New workflow for *contributing*
-3. Roxygen2 Documentation of */R/Workspace.R* and compile it by `Workspace$libraryUpdate()` && modify paths of *README.md*.
-4. Rpubs, pdf = vignettes, git webpage (index.html), ... of script I want. 
+1. Lapply push
+2. Add an example with `devtools::install_github()`. Take into account public and private repositories.
+3. New workflow for *contributing*
+4. Roxygen2 Documentation of */R/Workspace.R* and compile it by `Workspace$libraryUpdate()` && modify paths of *README.md*.
+5. Rpubs, pdf = vignettes, git webpage (index.html), ... of script I want. 
 
 ## Contributing
 
