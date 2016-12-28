@@ -1,13 +1,9 @@
 Package: devR
-Title: What the Package Does (one line, title case)
+Title: R package which provides an R6class Workspace.R with methods to easy create and update an R package.
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Authors@R: person("Joan D.", "Viana Fons", email = "joanvianafons@gmail.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
-Depends:
-    R (>= 3.2.5),
-    roxygen2,
-    devtools,
-    R6
+Depends:roxygen2,devtools,R6
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
