@@ -1,6 +1,6 @@
-# pvR
+# devR
 
-*pvR* is an R package which provides an R6class **Workspace.R** with methods to easy create and update an R package. 
+*devR* is an R package which provides an R6class **Workspace.R** with methods to easy create and update an R package. 
 
 * Full R-package skeleton creation
 * Roxygen2 documentation to pdf manual
