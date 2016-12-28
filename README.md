@@ -16,23 +16,21 @@ Therefore implements functions for working with archives: files, folders, git, R
  ```R
  
  install.packages('devtools')
- 
  library('devtools')
- 
  devtools::install_github('JoanViana/devR')
  
  ```
  
- or [download](https://github.com/JoanViana/pvR/blob/master/devR_0.0.0.9000.tar.gz) and install from source:
+ or [download](https://github.com/JoanViana/devR/blob/master/devR_0.0.0.9000.tar.gz) and install from source:
  
  ```R
  
  install.packages(path_to_file, repos = NULL, type="source")
  
  ```
- Where *path_to_file* could be:
- * On Windows it will look something like this: C:\Users\user\Downloads\devR_0.0.0.9000.tar.gz.
- * On UNIX it will look like this: /home/user/download/devR_0.0.0.9000.tar.gz.
+ Where `path_to_file` could be:
+ * On Windows it will look something like this: `C:\Users\user\Downloads\devR_0.0.0.9000.tar.gz`.
+ * On UNIX it will look like this: `/home/user/download/devR_0.0.0.9000.tar.gz`.
  
 ##### Windows users: Activate *Windows PowerShell* and *GIT* running:
 
@@ -49,14 +47,14 @@ REM.-- Install poshgit: https://github.com/dahlbyk/posh-git
 Powershell -command Install-Module posh-git
 
 REM.-- Add PATH to System
-REM.-- SETX /M path "%path%;C:\Program Files\Git\cmd\"
+SETX /M path "%path%;C:\Program Files\Git\cmd\"
 
 PAUSE
 ```
 
 ## Usage
 
-Check the [Controller Demo](https://github.com/JoanViana/pvR/blob/master/demo/devControlleR.R) and the [Documentation](https://github.com/JoanViana/pvR/blob/master/devR.pdf)
+Check the [Controller Demo](https://github.com/JoanViana/devR/blob/master/demo/devControlleR.R) and the [Documentation](https://github.com/JoanViana/devR/blob/master/devR.pdf)
 
 Workflow example: Create a hosted git repository and an R project (myProject.Rproj) in your workspace from RStudio and type from your Controller script:
 
@@ -116,4 +114,4 @@ Joan Dídac Viana Fons - <joanvianafons@gmail.com>
 
 ## License
 
-MIT - Please, read [LICENSE](https://github.com/JoanViana/pvR/blob/master/LICENSE)
+MIT - Please, read [LICENSE](https://github.com/JoanViana/devR/blob/master/LICENSE)
