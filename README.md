@@ -98,10 +98,8 @@ w$libraryUpdate(Xlibrary = lib, Xmessage = 'version 0.0.0.9002', Xuser = 'JoanVi
 2. Add an example with `devtools::install_github()`. Take into account public and private repositories.
 3. Add dataset to package. [Three options](http://r-pkgs.had.co.nz/data.html)
 4. New workflow for *contributing*
-5. TeX names(dt)
-6. Xtable and print in a pdf
-7. Roxygen2 Documentation of */R/Workspace.R* and compile it by `Workspace$libraryUpdate()` && modify paths of *README.md*.
-8. Rpubs, pdf = vignettes, git webpage (index.html), ... of script I want. 
+5. Roxygen2 Documentation of */R/Workspace.R* and compile it by `Workspace$libraryUpdate()` && modify paths of *README.md*.
+6. Rpubs, pdf = vignettes, git webpage (index.html), ... of script I want. 
 
 ## Contributing
 
