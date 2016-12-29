@@ -95,6 +95,7 @@ w$libraryUpdate(Xlibrary = lib, Xmessage = 'version 0.0.0.9002', Xuser = 'JoanVi
 ## Next Tasks (Features & Documentation)
 
 1. Lapply push
+2. Clean Code (comments)
 2. Add an example with `devtools::install_github()`. Take into account public and private repositories.
 3. Add dataset to package. [Three options](http://r-pkgs.had.co.nz/data.html)
 4. New workflow for *contributing*
