@@ -1,11 +1,11 @@
-# Load all the dependencies needed in the package to be created
-# library(...)
-library(R6)
-library(devtools)
-library(roxygen2)
-
-# Load R6Class
-source('Workspace.R')
+# # Load all the dependencies needed in the package to be created
+# # library(...)
+# library(R6)
+# library(devtools)
+# library(roxygen2)
+# # Load R6Class
+# source('Workspace.R')
+library(devR)
 
 # Create an instance of R6Class in root directory
 w = Workspace$new(getwd())
@@ -15,14 +15,14 @@ name = 'devR'
 
 # Create new library in root directory and git init
 # w$libraryCreate(name, Xname = 'Joan Viana', Xemail = 'joanvianafons@gmail.com', Xhttps = 'https://JoanViana@bitbucket.org/JoanViana/devr.git')
-w$libraryCreate(name, Xname = 'Joan Viana', Xemail = 'joanvianafons@gmail.com', Xhttps = 'https://github.com/JoanViana/devR.git')
+# w$libraryCreate(name, Xname = 'Joan Viana', Xemail = 'joanvianafons@gmail.com', Xhttps = 'https://github.com/JoanViana/devR.git')
 
 # Now it is time to develop the package ...
   # Example: copy files
   w$fileCopy(c('LICENSE', 'README.md'), file.path(name))
   w$fileCopy(c('Workspace.R'), file.path(name, 'R'))
   w$fileCopy(c('devControlleR.R'), file.path(name, 'demo'))
-  w$setDescription(name, Xtext = "License: MIT + file LICENSE", Xlines = 7)
+  # w$setDescription(name, Xtext = "License: MIT + file LICENSE", Xlines = 7)
   
   
 # Create documentation, manual pdf, build, install and git add, commit & push: Xhost = 'bitbucket.org' or Xhost = 'github.com'
@@ -31,6 +31,7 @@ w$libraryCreate(name, Xname = 'Joan Viana', Xemail = 'joanvianafons@gmail.com', 
 w$libraryUpdate(name,'version 0.0.0.9000', Xname = 'Joan Viana', Xemail = 'joanvianafons@gmail.com',
                 Xuser = 'JoanViana', Xpassword = 'Pikaporte123', Xrepository = 'devR', Xbranch = 'master', Xhost = 'github.com')
 
+##############################################################################################
 
 # Load installed library
 library(myLibrary)

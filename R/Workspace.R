@@ -165,7 +165,7 @@ Workspace = R6Class('Workspace',
                   self$folderCreate(as.list(paste(Xlibrary,
                                                   c('man','data','vignettes',
                                                     'demo','test','src','exec',
-                                                    'inst'), sep = '/')))
+                                                    'inst','inst/extdata'), sep = '/')))
                   # if (XcheckDescription) self$checkDescription(Xlibrary, Xname, Xemail)
                   if (XloadPackages) self$addPackages2Description(Xlibrary)
                   if(!is.null(Xtext) & !is.null(Xlines)) self$setDescription(Xlibrary, Xtext, Xlines)
