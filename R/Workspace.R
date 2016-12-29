@@ -122,20 +122,20 @@ Workspace = R6Class('Workspace',
                   setwd(self$root)
                   # if(!is.null(Xhttps) | (!is.null(Xuser) & !is.null(Xpassword) & !is.null(Xrepository)))  self$gitPush(Xfolder, Xhttps, Xuser, Xpassword, Xrepository, Xbranch, Xhost)
                 },
-                gitCommit = function(Xfolder, Xmessage, Xhttps = NULL, Xname = NULL, Xemail = NULL, Xuser = NULL, Xpassword = NULL, Xrepository = NULL, Xbranch = 'master', Xhost = 'bitbucket.org'){
+                gitCommit = function(Xfolder, Xmessage, Xhttps = NULL, Xname = NULL, Xemail = NULL, Xuser = NULL, Xpassword = NULL, Xrepository = NULL, Xbranch = 'master', Xhost = 'bitbucket.org', Xforce = F){
                   if(!is.null(Xname) | !is.null(Xemail)) self$setGitUser(Xname, Xemail)
                   self$gitBranch(Xfolder, Xbranch)
                   setwd(Xfolder)
                   self$runCommand('git add --all')
-                  self$runCommand(shQuote(paste0('git commit -m "', Xmessage, '"')))
+                  self$runCommand(shQuote(paste0('git commit -m "', Xmessage, '"', ifelse(Xforce, '--force', ''))))
                   setwd(self$root)
-                  if(!is.null(Xhttps) | (!is.null(Xuser) & !is.null(Xpassword) & !is.null(Xrepository))) self$gitPush(Xfolder, Xhttps, Xuser, Xpassword, Xrepository, Xbranch, Xhost)
+                  if(!is.null(Xhttps) | (!is.null(Xuser) & !is.null(Xpassword) & !is.null(Xrepository))) self$gitPush(Xfolder, Xhttps, Xuser, Xpassword, Xrepository, Xbranch, Xhost, Xforce)
                   self$commits[[length(self$commits) + 1]] = paste(Xmessage, Sys.time(), Xbranch, sep = ' - ')
                 },
-                gitPush = function(Xfolder, Xhttps = NULL, Xuser = NULL, Xpassword = NULL, Xrepository = NULL, Xbranch = 'master', Xhost = 'bitbucket.org'){
+                gitPush = function(Xfolder, Xhttps = NULL, Xuser = NULL, Xpassword = NULL, Xrepository = NULL, Xbranch = 'master', Xhost = 'bitbucket.org', Xforce = F){
                   setwd(Xfolder)
                   if(is.null(self$remote)) self$setRemote(Xhttps, Xuser, Xpassword, Xrepository, Xhost)
-                  system(paste0('git push -u origin ', Xbranch))
+                  system(paste0('git push -u origin ', Xbranch, ifelse(Xforce, '--force', '')))
                   setwd(self$root)
                 },
                 gitBranch = function(Xfolder, Xname){
@@ -171,7 +171,7 @@ Workspace = R6Class('Workspace',
                   if(!is.null(Xtext) & !is.null(Xlines)) self$setDescription(Xlibrary, Xtext, Xlines)
                   self$gitInit(Xlibrary, Xhttps, Xname, Xemail, Xuser, Xpassword, Xrepository, Xbranch, Xhost)
                 },
-                libraryUpdate = function(Xlibrary, Xmessage, Xhttps = NULL, Xname = NULL, Xemail = NULL, Xuser = NULL, Xpassword = NULL, Xrepository = NULL, Xbranch = 'master', Xhost = 'bitbucket.org', XloadPackages = T, Xlines = NULL, Xtext = NULL, XcheckDescription = T){
+                libraryUpdate = function(Xlibrary, Xmessage, Xhttps = NULL, Xname = NULL, Xemail = NULL, Xuser = NULL, Xpassword = NULL, Xrepository = NULL, Xbranch = 'master', Xhost = 'bitbucket.org', XloadPackages = T, Xlines = NULL, Xtext = NULL, XcheckDescription = T, Xforce = F){
                   # Create documentation as .Rd files in man directory
                   document(Xlibrary)
                   message('Documentation generated in Rd.')
@@ -192,7 +192,7 @@ Workspace = R6Class('Workspace',
                   # if (XloadPackages) self$addPackages2Description(Xlibrary)
                   if(!is.null(Xtext) & !is.null(Xlines)) self$setDescription(Xlibrary, Xtext, Xlines)
                   # Git commit
-                  self$gitCommit(Xlibrary, Xmessage, Xhttps, Xname, Xemail, Xuser, Xpassword, Xrepository, Xbranch, Xhost)
+                  self$gitCommit(Xlibrary, Xmessage, Xhttps, Xname, Xemail, Xuser, Xpassword, Xrepository, Xbranch, Xhost, Xforce)
                   message('Commit finish.')
                 },
                 checkDescription = function(Xlibrary, Xname, Xemail){
