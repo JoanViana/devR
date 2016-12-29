@@ -127,7 +127,7 @@ Workspace = R6Class('Workspace',
                   self$gitBranch(Xfolder, Xbranch)
                   setwd(Xfolder)
                   self$runCommand('git add --all')
-                  self$runCommand(shQuote(paste0('git commit -m "', Xmessage, '"', ifelse(Xforce, '--force', ''))))
+                  self$runCommand(shQuote(paste0('git commit -m "', Xmessage, '"', ifelse(Xforce, ' --force', ''))))
                   setwd(self$root)
                   if(!is.null(Xhttps) | (!is.null(Xuser) & !is.null(Xpassword) & !is.null(Xrepository))) self$gitPush(Xfolder, Xhttps, Xuser, Xpassword, Xrepository, Xbranch, Xhost, Xforce)
                   self$commits[[length(self$commits) + 1]] = paste(Xmessage, Sys.time(), Xbranch, sep = ' - ')
@@ -176,7 +176,7 @@ Workspace = R6Class('Workspace',
                   document(Xlibrary)
                   message('Documentation generated in Rd.')
                   # Generate manual pdf
-                  system(paste0("R CMD Rd2pdf -o ", file.path(self$root, Xlibrary, paste0(Xlibrary,'.pdf'))," --force ", Xlibrary))
+                  system(paste0("R CMD Rd2pdf -o ", file.path(self$root, Xlibrary, paste0(Xlibrary,'.pdf')), ' --force', Xlibrary))
                   message('Documentation generated in pdf.')
                   # Build package
                   build(Xlibrary, path = Xlibrary, vignettes = T, manual = T) 
