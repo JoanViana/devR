@@ -7,7 +7,7 @@
 * Git 
 * Install and build
 
-Therefore implements functions for working with archives: files, folders, git, Rd2pdf, python scripts and bash.
+Therefore implements functions for working with archives: files, folders, git, Rd2pdf and bash.
 
 ## Installation
 

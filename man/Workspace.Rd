@@ -34,7 +34,6 @@ Workspace
   \item{\code{libraryUpdate(Xlibrary)}}{This method updates package documentation (with \code{document()} function from \code{roxygen2}), creates a pfd manual, builds and installs the package and runs \code{gitCommit()}.}
  \item{\code{readAllFiles(Xpath, Xpattern = '*.csv', Xbind = TRUE, X2env = TRUE)}}{This method import all files in a folder and returns a only \code{data.table}. If \code{Xbind = FALSE} returns a list of \code{data.table} with the same name than files and save in Global Environment. If \code{X2env = FALSE} returns a named list of \code{data.table}.}
  \item{\code{rd2pdf(Xtitle, Xoutput, Xinput)}}{This method coverts an \code{Xinput} Rd file into \code{Xoutput} pdf with \code{Xtitle} from \code{Xroot}.}   
- \item{\code{runPython(Xscript)}}{This method run python script saved in \code{Xscript} path from \code{self$root}.}
   \item{\code{runSystem(Xcommand)}}{This method run bash command typed in \code{Xcommand} from \code{self$root}.}
   }
 }

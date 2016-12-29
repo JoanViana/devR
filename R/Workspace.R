@@ -40,7 +40,6 @@
 #'   \item{\code{libraryUpdate(Xlibrary)}}{This method updates package documentation (with \code{document()} function from \code{roxygen2}), creates a pfd manual, builds and installs the package and runs \code{gitCommit()}.}
 #'	 \item{\code{readAllFiles(Xpath, Xpattern = '*.csv', Xbind = TRUE, X2env = TRUE)}}{This method import all files in a folder and returns a only \code{data.table}. If \code{Xbind = FALSE} returns a list of \code{data.table} with the same name than files and save in Global Environment. If \code{X2env = FALSE} returns a named list of \code{data.table}.}
 #'	 \item{\code{rd2pdf(Xtitle, Xoutput, Xinput)}}{This method coverts an \code{Xinput} Rd file into \code{Xoutput} pdf with \code{Xtitle} from \code{Xroot}.}   
-#'	 \item{\code{runPython(Xscript)}}{This method run python script saved in \code{Xscript} path from \code{self$root}.}
 #'   \item{\code{runSystem(Xcommand)}}{This method run bash command typed in \code{Xcommand} from \code{self$root}.}
 #'   }
 
@@ -206,23 +205,8 @@ Workspace = R6Class('Workspace',
                                         Xlines = 4)
                   }
                 },
-                readCsv = function(Xpath, Xpattern = '*.csv', Xbind = TRUE, X2env = TRUE){
-                  files = list.files(path = Xpath, pattern = Xpattern, full.names = T)
-                  if (!Xbind){
-                    if (X2env){
-                      list2env(
-                        lapply(setNames(files, make.names(gsub(Xpattern, '', files))), 
-                               fread), envir = .GlobalEnv)
-                    }
-                    else return (lapply(files, fread))
-                  }
-                  else return (rbindlist(lapply(files, fread)))
-                },
                 rd2pdf = function(Xtitle, Xoutput , Xinput){
                   system(paste0('R CMD Rd2pdf --title:', Xtitle,' -o ', Xoutput,'.pdf --force ', Xinput,'.Rd'))
-                },
-                runPython = function(Xscript){
-                  system(paste0('python ', Xscript))
                 },
                 runFile = function(Xfile){
                   f = path.expand(Xfile)
