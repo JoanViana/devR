@@ -29,7 +29,7 @@ name = 'devR'
 # w$libraryUpdate(name,'version 0.0.0.9000', Xname = 'Joan Viana', Xemail = 'joanvianafons@gmail.com',
 #                 Xuser = 'JoanViana', Xpassword = 'Pikaporte123', Xrepository = 'devr', Xbranch = 'master', Xhost = 'bitbucket.org')
 w$libraryUpdate(name,'version 0.0.0.9000', Xname = 'Joan Viana', Xemail = 'joanvianafons@gmail.com',
-                Xuser = 'JoanViana', Xpassword = 'Pikaporte123', Xrepository = 'devR', Xbranch = 'master', Xhost = 'github.com')
+                Xuser = 'JoanViana', Xpassword = '...', Xrepository = 'devR', Xbranch = 'master', Xhost = 'github.com')
 
 ##############################################################################################
 
@@ -45,7 +45,7 @@ name.test = 'Test'
 
 # Create new library in root directory and git init
 w.test$libraryCreate(name.test, Xname = 'Joan Viana', Xemail = 'joanvianafons@gmail.com', Xhttps = 'https://JoanViana@bitbucket.org/JoanViana/test4.git',
-                     Xuser = 'JoanViana', Xpassword = 'Pikaporte123', Xrepository = 'test3', Xbranch = 'master', Xhost = 'bitbucket.org')
+                     Xuser = 'JoanViana', Xpassword = '...', Xrepository = 'test3', Xbranch = 'master', Xhost = 'bitbucket.org')
 
 # Now it is time to develop the package ...
 # Example: copy files
@@ -56,6 +56,6 @@ w.test$setDescription(name.test, Xtext = "License: MIT + file LICENSE", Xlines =
 
 # Create documentation, manual pdf, build, install and git commit: Xhost = 'bitbucket.org' or Xhost = 'github.com'
 w.test$libraryUpdate(name.test,'version 0.0.0.9000', Xname = 'Joan Viana', Xemail = 'joanviana@gmail.com', 
-                     Xuser = 'JoanViana', Xpassword = 'Pikaporte123', Xrepository = 'test3', Xbranch = 'master', Xhost = 'bitbucket.org')
+                     Xuser = 'JoanViana', Xpassword = '...', Xrepository = 'test3', Xbranch = 'master', Xhost = 'bitbucket.org')
 
 
